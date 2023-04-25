@@ -1,1 +1,5 @@
-drf-social-oauth2==2.1.0
+# Original library ({"error":"access_denied","error_description":"Your credentials aren't allowed"})
+# drf-social-oauth2==2.1.0
+
+# Fixed library ({"access_token":"...","expires_in":36000,"token_type":"Bearer","scope":"read write","refresh_token":"..."})
+https://github.com/SukiCZ/drf-social-oauth2/archive/fix/github-oauth.zip#egg=drf_social_oauth2==2.0.0

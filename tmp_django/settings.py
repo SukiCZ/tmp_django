@@ -142,8 +142,11 @@ REST_FRAMEWORK = {
 }
 
 AUTHENTICATION_BACKENDS = (
-    # GitHub OAuth2
-    'social_core.backends.github.GithubOAuth2',
+    # Customized GitHub OAuth2 <- this works
+    'oauth.backends.github.GitHubOAuth2',
+
+    # Original GitHub OAuth2 <- this doesn't work
+    # 'oauth.backends.github.GithubOAuth2',
 
     'drf_social_oauth2.backends.DjangoOAuth2',
     'django.contrib.auth.backends.ModelBackend',
