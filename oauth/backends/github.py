@@ -23,3 +23,11 @@ class GitHubOAuth2(GithubOAuth2):
         )
         self.process_error(response)
         return response["access_token"]
+
+    @handle_http_errors
+    def auth_complete(self, *args, **kwargs):
+        # For debugging purpose only - not to use GitHub's `code` on /auth/complete/github/ endpoint
+        request = kwargs['request']
+        if 'complete' in request.path:
+            raise Exception(request)
+        return super(GitHubOAuth2, self).auth_complete(*args, **kwargs)
